@@ -28,10 +28,11 @@ Clone the repository and install in editable mode:
 git clone https://github.com/<your-username>/voltage-sweep-cycles.git
 cd voltage-sweep-cycles
 pip install -e .
-
+```
 From pip
+```bash
 pip install voltage-sweep-cycles
-
+```
 ## Usage
 ```python
 from process_voltage_sweep import process_voltage_sweep
