@@ -1,6 +1,6 @@
 # Voltage Sweep Cycle Detection
 
-This repository contains a Python script to process voltage sweep (I–V) data and automatically label:
+A Python package for processing voltage sweep (I–V) data and automatically label:
 - SET / RESET processes
 - Cycle numbers (starting from 1)
 
@@ -18,6 +18,20 @@ The logic is robust to noise near 0 V and works for experimental memristor / ReR
 - Start a new SET or RESET only once per zero crossing
 - Assign the same cycle number until the next process starts
 
+## Installation
+
+### From source (recommended for development)
+
+Clone the repository and install in editable mode:
+
+```bash
+git clone https://github.com/<your-username>/voltage-sweep-cycles.git
+cd voltage-sweep-cycles
+pip install -e .
+
+From pip
+pip install voltage-sweep-cycles
+
 ## Usage
 ```python
 from process_voltage_sweep import process_voltage_sweep
@@ -28,9 +42,13 @@ process_voltage_sweep(
     voltage_col='Voltage (V)'
 )
 ```
+Note:
+The pip package name is 'voltage-sweep-cycles',
+but the Python import name is 'process_voltage_sweep'.
 
 ## Input file
 CSV or Excel file containing a voltage column and measured data.
+Other measurement columns are preserved.
 
 ## Output
 Two new columns are added:
@@ -38,4 +56,5 @@ Two new columns are added:
 - `Cycle`
 
 ## Requirements
-See `requirements.txt`
+Python ≥ 3.8
+Dependencies are listed in pyproject.toml
