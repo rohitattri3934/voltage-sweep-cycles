@@ -85,13 +85,13 @@ def process_voltage_sweep(input_file, output_file, voltage_col):
 
                 # Voltage increasing → SET
                 if new_direction == 'up':
-                    current_mode = 'SET'
+                    current_mode = 'Set'
                     set_cycle += 1
                     current_cycle = set_cycle
 
                 # Voltage decreasing → RESET
                 elif new_direction == 'down':
-                    current_mode = 'RESET'
+                    current_mode = 'Reset'
                     reset_cycle += 1
                     current_cycle = reset_cycle
 
@@ -127,3 +127,4 @@ def process_voltage_sweep(input_file, output_file, voltage_col):
         df.to_excel(output_file, index=False)
 
     return df
+
